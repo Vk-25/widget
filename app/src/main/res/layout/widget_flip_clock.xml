@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingLeft="6dp"
+        android:paddingRight="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <!-- Digit row: H1 H2 · M1 M2 · S1 S2 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="5dp">
+
+            <ImageView android:id="@+id/iv_h1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+            <ImageView android:id="@+id/iv_h2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+
+            <ImageView android:id="@+id/iv_sep1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+
+            <ImageView android:id="@+id/iv_m1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+            <ImageView android:id="@+id/iv_m2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+
+            <ImageView android:id="@+id/iv_sep2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+
+            <ImageView android:id="@+id/iv_s1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginEnd="2dp"/>
+            <ImageView android:id="@+id/iv_s2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
+
+        <!--
+            Date label — bottom, left-aligned, close to the clock.
+            Full white (#FF) + drop shadow for visibility on any wallpaper.
+        -->
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wed, 19 Mar 2026"
+            android:textSize="11sp"
+            android:letterSpacing="0.05"
+            android:textColor="#FFFFFFFF"
+            android:fontFamily="sans-serif-light"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:paddingLeft="2dp"
+            android:shadowColor="#BB000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="6"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    widget_background.xml  — Year Progress: deep black glass
+    Black base (#E5 opacity) with 26dp radius, crisp specular rim.
+    Gives a premium OLED / Apple Dynamic Island feel.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Near-opaque black — deep, not washed out -->
+    <solid android:color="#E5080808" />
+    <corners android:radius="26dp" />
+    <!-- Faint specular rim for glass edge definition -->
+    <stroke android:width="1dp" android:color="#30FFFFFF" />
+</shape>
