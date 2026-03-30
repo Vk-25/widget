@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    year_progress_widget_info.xml
+    ─────────────────────────────
+    targetCellWidth/Height = 4×3 default size.
+    minWidth/Height = minimum 2×2 cell equivalent.
+    minResizeWidth/Height allows shrinking to 2×2.
+    updatePeriodMillis = 1800000 (30 min, Android minimum).
+-->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="200dp"
-    android:minHeight="140dp"
+    android:minWidth="110dp"
+    android:minHeight="110dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="110dp"
     android:targetCellWidth="4"
     android:targetCellHeight="3"
-    android:updatePeriodMillis="86400000"
+    android:updatePeriodMillis="1800000"
     android:initialLayout="@layout/widget_year_progress"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen"

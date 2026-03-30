@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    widget_flip_clock.xml
+    ─────────────────────
+    • Digit row: H1 H2 · M1 M2 · S1 S2  (all ImageViews, bitmaps set in code)
+    • Date strip: ImageView iv_date — full-width bitmap drawn in FlipClockWidget
+      giving pixel-perfect control over font size, weight, colour and shadow.
+    • Transparent root — wallpaper shows through between tiles.
+-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,21 +15,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
+        android:layout_gravity="top|center_horizontal"
         android:orientation="vertical"
         android:gravity="center_horizontal"
-        android:paddingLeft="6dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
         android:paddingTop="4dp"
         android:paddingBottom="4dp">
 
-        <!-- Digit row: H1 H2 · M1 M2 · S1 S2 -->
+        <!-- ── Digit row ─────────────────────────────────────────────── -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="5dp">
+            android:layout_marginBottom="6dp">
 
             <ImageView android:id="@+id/iv_h1"
                 android:layout_width="wrap_content"
@@ -69,26 +77,20 @@
 
         </LinearLayout>
 
+        <!-- ── Date strip — full-width bitmap ────────────────────────── -->
         <!--
-            Date label — bottom, left-aligned, close to the clock.
-            Full white (#FF) + drop shadow for visibility on any wallpaper.
+            Rendered by FlipClockWidget.buildDateBitmap():
+              [DayName] · [DD] [MonthName] · [YYYY]
+            Bold + drop shadow for visibility on any wallpaper.
+            adjustViewBounds keeps the bitmap at its natural aspect ratio.
         -->
-        <TextView
-            android:id="@+id/tv_date"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/iv_date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Wed, 19 Mar 2026"
-            android:textSize="11sp"
-            android:letterSpacing="0.05"
-            android:textColor="#FFFFFFFF"
-            android:fontFamily="sans-serif-light"
-            android:layout_gravity="start"
-            android:gravity="start"
-            android:paddingLeft="2dp"
-            android:shadowColor="#BB000000"
-            android:shadowDx="0"
-            android:shadowDy="1"
-            android:shadowRadius="6"/>
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:layout_gravity="start"/>
 
     </LinearLayout>
 
